@@ -1,0 +1,23 @@
+body{
+  background: black;
+  color:#fff;
+}
+
+h1{
+  margin-bottom: 1em;
+}
+
+.card{
+  cursor: pointer;
+  transition: 0.2s ease-out;
+  
+}
+
+.card-title{
+  text-align: center
+}
+
+.card:hover{
+  transform: scale(1.05);
+
+}
