@@ -11,8 +11,9 @@ const LaunchList = () => {
         <h3>Launch List</h3>
       {
         loading ? <h3>Loading...</h3> : error ? <h3>{error}</h3> :
-          data.launches.map(launch => (
-            <div key={launch.id}>
+          <div className='container'>
+            {data.launches.map(launch => (
+              <div key={launch.id}>
                 <div className='card purple darken-1'>
                   <div className='card-content white-text'>
                     <div className='card-title'>
@@ -20,9 +21,12 @@ const LaunchList = () => {
                     </div>
                   </div>
                 </div>
-             </div>
-          ))
+              </div>
+            ))
+            }
+          </div>
       }
+     
     </div>
   )
 };

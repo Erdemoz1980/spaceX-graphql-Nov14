@@ -4,8 +4,10 @@ import {
   ApolloProvider,
   InMemoryCache
 } from '@apollo/client';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import RocketList from './components/RocketList';
 import LaunchList from './components/LaunchList';
+import LandingPage from './components/LandingPage';
 
 
 
@@ -17,21 +19,15 @@ const App = () => {
 
 
   return (
-    <ApolloProvider client={client}>
-      <h1>Erdem's SpaceX App</h1>
-      <div className='container'>
-         <div className='row'>
-        <div className='col s12 m6'>
-          <RocketList className='col s12 m6' />
-        </div>
-        <div className='col s12 m6'>
-          <LaunchList className='col s12 m6' />
-        </div>
-      </div>
-     
-      </div>
-    </ApolloProvider>
-    
+    <Router>
+      <ApolloProvider client={client}>
+        <Routes>
+          <Route path='/' element={<LandingPage />} />
+          <Route path='/launches' element={<LaunchList/>} />
+          <Route path='/rockets' element={<RocketList/>} />
+        </Routes>
+      </ApolloProvider>
+      </Router>
   )
 };
 

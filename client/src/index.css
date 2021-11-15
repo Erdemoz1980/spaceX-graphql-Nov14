@@ -9,15 +9,26 @@ h1{
 
 .card{
   cursor: pointer;
-  transition: 0.2s ease-out;
+  transition: 0.2s ease-in;
   
 }
 
-.card-title{
-  text-align: center
-}
-
 .card:hover{
-  transform: scale(1.05);
+  transform: scale(1.025);
 
 }
+.card-title{
+  text-align: center;
+}
+
+
+
+a{
+  color: #fff;
+}
+
+.btn {
+font-size: 1.5em;
+
+}
+
