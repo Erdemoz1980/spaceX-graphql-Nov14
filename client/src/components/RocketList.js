@@ -5,6 +5,7 @@ import {
 import { ROCKETS } from '../queries/queries';
 import { Link } from 'react-router-dom';
 
+
 const RocketList = () => {
   const {loading, error, data} = useQuery(ROCKETS)
   return (
@@ -23,11 +24,14 @@ const RocketList = () => {
               data.rockets.map(rocket => (
         
                 <div key={rocket.id}>
-                  <div className='card purple darken-1'>
+                  <div className='card purple darken-1' id='rocket-list'>
                     <div className='card-content white-text'>
-                      <div className='card-title'>
-                        {rocket.name}
+                      <Link to={`/rockets/${rocket.id}`}>
+                           <div className='card-title'>
+                          {rocket.name}
                       </div>
+                      </Link>
+                   
                     </div>
                   </div>
                </div>

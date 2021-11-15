@@ -20,4 +20,12 @@ const ROCKETS = gql`
 }
 `
 
-export { LAUNCHES, ROCKETS };
+const ROCKET = gql`
+  query($id:ID){
+    rocket(id:$id){
+      id, name, country, company, description,  first_flight, flickr_images,active
+    }
+  }
+`
+
+export { LAUNCHES, ROCKETS, ROCKET };

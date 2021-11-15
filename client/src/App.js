@@ -8,6 +8,7 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import RocketList from './components/RocketList';
 import LaunchList from './components/LaunchList';
 import LandingPage from './components/LandingPage';
+import RocketDetails from './components/RocketDetails';
 
 
 
@@ -24,7 +25,8 @@ const App = () => {
         <Routes>
           <Route path='/' element={<LandingPage />} />
           <Route path='/launches' element={<LaunchList/>} />
-          <Route path='/rockets' element={<RocketList/>} />
+          <Route path='/rockets' element={<RocketList />} />
+          <Route path='/rockets/:id' element={<RocketDetails />} />
         </Routes>
       </ApolloProvider>
       </Router>
